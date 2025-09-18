@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* General body and typography settings */
 body {
     margin: 0;
@@ -301,4 +302,309 @@ This media query handles tablets and other mid-sized devices.
     .bottom-content h2 {
         font-size: 36px;
     }
+=======
+/* General body and typography settings */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    text-align: left;
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff6961;
+}
+
+.nav-menus {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menus li {
+    padding: 10px 25px;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.menu-icon {
+    display: none; /* Hide icon on large screens */
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #fff7ad 0%, #eea5c7 100%);
+    min-height: 100vh;
+}
+
+.hero-content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 50px;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    margin: 0 0 20px;
+    color: #333;
+    letter-spacing: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-content p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #555;
+    padding-bottom: 30px;
+    max-width: 500px;
+}
+
+.cta-button-wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cta-button {
+    background-color: #ff6961;
+    color: #fff;
+    font-size: 15px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff8c82;
+}
+
+.hero-image-container {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.hero-image {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Bottom Section */
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #fff7ad 0%, #eea5c7 100%);
+    padding: 80px 100px;
+}
+
+.image-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    column-gap: 35px;
+    flex: 1;
+}
+
+.image-section .grid-image:nth-child(3) {
+    grid-row: 1 / span 2;
+    grid-column: 2 / 3;
+    width: 250px;
+    height: 380px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    object-fit: cover;
+}
+.image-section .grid-image:nth-child(2) {
+    width: 250px;
+    height: 180px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    object-fit: cover;
+}
+
+.image-section .grid-image:nth-child(1) {
+    width: 250px;
+    height: 180px;
+    padding-left: 20px;
+    padding-top: 20px;
+    object-fit: cover;
+}
+.bottom-content {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    padding-left: 50px;
+    padding-right: 100px;
+}
+
+.content-box {
+    background-color: #ff6961;
+    color: black;
+    padding: 50px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.content-box .small-text {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.content-box h2 {
+    font-size: 60px;
+    letter-spacing: 4px;
+    margin: 20px 0 20px 0;
+    line-height: 1;
+}
+
+.arrow-link {
+    text-decoration: none;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.arrow-link img {
+    margin-left: 5px;
+    width: 30px;
+    height: auto;
+}
+
+/* --- */
+
+/*## Why your code doesn't work on other devices 🛠️
+
+The problem with your current CSS is that it uses fixed pixel values and has limited, inconsistent media queries. This causes the layout to break on screen sizes that don't match your exact desktop view. A truly responsive design is fluid and adapts to **any** screen size.
+
+### 1. Inconsistent Media Queries 📉
+You only have two media queries, at `1024px` and `767px`, and they don't cover a full range of devices. Some of your styling is still fixed, and the layout breaks in between these sizes.
+
+### 2. Fixed Dimensions 📏
+You're using `width` and `height` with pixel values on your images, like `width: 250px`. This is the single biggest reason for a non-responsive layout. Images with fixed dimensions will not shrink or grow to fit a new screen size.
+
+### 3. Missing Mobile-First Approach 📱
+Your code is structured for a desktop-first design. A mobile-first approach builds the smallest layout first and then adds rules for larger screens. This is more efficient and ensures the site always looks good on mobile.
+
+---
+
+## Corrected Responsive CSS 🚀
+Here is the corrected and fully responsive CSS. You can replace your existing stylesheet with this code.
+
+### Base and Large Screens (Desktop First)
+The initial styles are optimized for large screens.
+
+### Tablet View (`max-width: 1024px`)
+This media query handles tablets and other mid-sized devices.
+```css*/ 
+@media (max-width: 1024px) {
+    .nav-menus li {
+        font-size: 18px;
+        margin: 0 15px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+        padding: 50px 5%;
+    }
+
+    .hero-content {
+        padding: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-image-container {
+        min-height: 400px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .bottom-section {
+        flex-direction: column;
+        padding: 50px 5%;
+    }
+
+    .image-section {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15px;
+        grid-template-rows: auto;
+    }
+
+    .image-section .grid-image:nth-child(1),
+    .image-section .grid-image:nth-child(2),
+    .image-section .grid-image:nth-child(3) {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    .bottom-content {
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .content-box {
+        padding: 30px;
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .nav-menus {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+    .hero-section, .bottom-section {
+        padding: 20px;
+    }
+    .hero-content h1 {
+        font-size: 40px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .image-section {
+        grid-template-columns: 1fr;
+    }
+    .image-section .grid-image:nth-child(3) {
+        grid-row: auto;
+        grid-column: auto;
+        height: auto;
+    }
+    .bottom-content h2 {
+        font-size: 36px;
+    }
+>>>>>>> df21783c9795cc2a9f83f97fe2f2b0efe7cef4a5
 }
